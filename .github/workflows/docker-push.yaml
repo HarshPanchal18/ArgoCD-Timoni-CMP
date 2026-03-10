@@ -9,6 +9,16 @@ permissions:
 
 
 jobs:
+
+  lint:
+    name: Lint Dockerfile
+    runs-on: ubuntu-latest
+    steps:
+        - uses: actions/checkout@v3
+        - uses: hadolint/hadolint-action@v3.1.0
+          with:
+            dockerfile: Dockerfile
+
   build:
     name: Docker build
     runs-on: ubuntu-latest
@@ -20,6 +30,7 @@ jobs:
           file: ./Dockerfile
           push: false
           tags: docker.io/harshpanchal18/argocd-timoni-cmp:latest
+
   publish:
     name: Push Docker image to Docker Hub
     runs-on: ubuntu-latest
