@@ -13,10 +13,11 @@ RUN curl -Lo /tmp/timoni.tar.gz "https://github.com/stefanprodan/timoni/releases
 RUN delgroup ping && \
     addgroup -g 998 ping && \
     adduser -D -u 999 argocd
+
 USER argocd
 
 RUN mkdir -p /home/argocd/cmp-server/config
 
-COPY plugin.yml /home/argocd/cmp-server/config/plugin.yaml
+COPY plugin.yaml /home/argocd/cmp-server/config/plugin.yaml
 
 ENTRYPOINT [ "/var/run/argocd/argocd-cmp-server" ]
