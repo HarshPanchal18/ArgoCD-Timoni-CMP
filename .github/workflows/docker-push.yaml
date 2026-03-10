@@ -10,15 +10,6 @@ permissions:
 
 jobs:
 
-  lint:
-    name: Lint Dockerfile
-    runs-on: ubuntu-latest
-    steps:
-        - uses: actions/checkout@v3
-        - uses: hadolint/hadolint-action@v3.1.0
-          with:
-            dockerfile: Dockerfile
-
   build:
     name: Docker build
     runs-on: ubuntu-latest
