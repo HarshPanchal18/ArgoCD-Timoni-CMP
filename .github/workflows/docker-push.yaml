@@ -19,7 +19,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: false
-          tags: docker.io/harshpanchal18/argocd-timoni-cmp
+          tags: docker.io/harshpanchal18/argocd-timoni-cmp:latest
   publish:
     name: Push Docker image to Docker Hub
     runs-on: ubuntu-latest
