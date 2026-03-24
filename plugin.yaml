@@ -10,7 +10,7 @@ spec:
     command: ["/bin/sh", "-c"]
     args:
       - |
-        /usr/local/bin/timoni build ${PARAM_APP_NAME} -n ${PARAM_APP_NAMESPACE} .
+        /usr/local/bin/timoni build ${PARAM_APP_NAME} -n ${PARAM_APP_NAMESPACE} . -f image.cue
   discover:
     filename: "timoni.cue"
   parameters:
