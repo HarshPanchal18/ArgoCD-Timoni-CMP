@@ -10,7 +10,7 @@ spec:
     command: ["/bin/sh", "-c"]
     args:
       - |
-        /usr/local/bin/timoni build ${PARAM_APP_NAME} -n ${PARAM_APP_NAMESPACE} . -f ${PARAM_VALUES_FILENAME}.yaml
+        /usr/local/bin/timoni build ${PARAM_APP_NAME} -n ${PARAM_APP_NAMESPACE} .
   discover:
     filename: "timoni.cue"
   parameters:
@@ -25,9 +25,9 @@ spec:
         description: "App Namespace to give into YAMLs"
         required: true
         strings: timoni
-      - name: values-filename
-        title: "Timoni Values"
-        description: "Values file to provide"
-        tooltip: "Trim .yaml"
-        required: true
-        strings: values
+      # - name: values-filename
+      #   title: "Timoni Values"
+      #   description: "Values file to provide"
+      #   tooltip: "Trim .yaml"
+      #   required: true
+      #   strings: values
