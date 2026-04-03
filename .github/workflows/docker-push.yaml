@@ -20,7 +20,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: false
-          tags: docker.io/harshpanchal18/argocd-timoni-cmp:latest
+          tags: docker.io/harshpanchal18/timoni-build:latest
 
   publish:
     name: Push Docker image to Docker Hub
@@ -40,7 +40,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: docker.io/harshpanchal18/argocd-timoni-cmp
+          images: docker.io/harshpanchal18/timoni-build
 
       - name: Build and publish Docker image
         uses: docker/build-push-action@v5
