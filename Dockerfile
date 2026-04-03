@@ -1,4 +1,4 @@
-FROM alpine@sha256:c5b1261d6d3e43071626931fc004f70149baeba2c8ec672bd4f27761f8e1ad6b
+FROM alpine:3.22.3
 
 ARG TIMONI_VERSION=0.25.2
 
@@ -10,9 +10,8 @@ RUN curl -Lo /tmp/timoni.tar.gz "https://github.com/stefanprodan/timoni/releases
     tar -xzf /tmp/timoni.tar.gz -C /usr/local/bin && \
     rm /tmp/timoni.tar.gz
 
-RUN delgroup ping && \
-    addgroup -g 998 ping && \
-    adduser -D -u 999 argocd
+RUN addgroup -g 998 argocd && \
+    adduser -D -u 999 -G argocd argocd
 
 USER argocd
 
