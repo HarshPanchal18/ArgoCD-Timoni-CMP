@@ -10,6 +10,6 @@ spec:
     command: ["/bin/sh", "-c"]
     args:
       - |
-        /usr/local/bin/timoni build timoni-build . -f values-${ARGOCD_ENV_Environment}.cue -f image.cue
+        /usr/local/bin/timoni build timoni-build . -f values-${ARGOCD_ENV_Environment}.cue -f image-${ARGOCD_ENV_Environment}.cue
   discover:
     filename: "timoni.cue"
