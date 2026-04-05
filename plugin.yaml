@@ -10,6 +10,8 @@ spec:
     command: ["/bin/sh", "-c"]
     args:
       - |
-        /usr/local/bin/timoni build timoni-build . -f values-${ARGOCD_ENV_Environment}.cue -f image-${ARGOCD_ENV_Environment}.cue
+        # Extract branch name from target revision
+        BRANCH=$(echo "$ARGOCD_APP_SOURCE_TARGET_REVISION" | sed 's|refs/heads/||')
+        /usr/local/bin/timoni build timoni-build . -f values-${BRANCH}.cue -f image-${BRANCH}.cue
   discover:
     filename: "timoni.cue"
